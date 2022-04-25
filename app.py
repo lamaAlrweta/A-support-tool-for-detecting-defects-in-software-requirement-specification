@@ -16,13 +16,13 @@ if button:
             st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Weak Words")
     for word in unboundedList:
         if (word in x):
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Weak Words")
+            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Unbounded List")
 
     for word in ambiguity: 
         if (word in x):
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Weak Words")
+            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity")
 
     for word in ambiguityWeakWords: 
         if (word in x):
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Weak Words")
+            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity & WeakWords")
     
