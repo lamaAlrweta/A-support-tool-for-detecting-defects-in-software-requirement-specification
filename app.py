@@ -21,8 +21,8 @@ if button:
     for word in ambiguity: 
         if (word in x):
             st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity")
-
     for word in ambiguityWeakWords: 
         if (word in x):
             st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity & WeakWords")
-    
+        # elif(word not in x):
+        #     st.text("The requrement classified as: Good")
