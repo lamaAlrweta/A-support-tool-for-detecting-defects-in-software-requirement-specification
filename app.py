@@ -9,20 +9,23 @@ ambiguity=['should','may','if possible','when','when appropriate','detail','deta
 ambiguityWeakWords=['support','relevant information','needed information']
 button=st.button("click",on_click=None)
 
-
 if button:
-    for word in weakWords:
-        if (word in x): 
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Weak Words")
-    for word in unboundedList:
-        if (word in x):
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Unbounded List")
+    count=0
+    x=x.split(" ")
+    for word in x:
+        #st.write(word)
+        if word in weakWords:         
+            st.text("The requirement classified as: Bad\nThe wrong word: " +word+"\ncategory: Weak Words")
+            count+=1
+        elif word in unboundedList:        
+            st.text("The requirement classified as: Bad\nThe wrong word: " +word+"\ncategory: Unbounded List")
+            count+=1
+        elif word in ambiguity:         
+            st.text("The requirement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity")
+            count+=1
+        elif word in ambiguityWeakWords:         
+            st.text("The requirement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity & WeakWords")
+            count+=1
+    if count==0:
+        st.text("The requirement classified as: Good")
 
-    for word in ambiguity: 
-        if (word in x):
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity")
-    for word in ambiguityWeakWords: 
-        if (word in x):
-            st.text("The requrement classified as: Bad\nThe wrong word: " +word+"\ncategory: Ambiguity & WeakWords")
-        elif(word not in x):
-            st.text("The requrement classified as: Good")
